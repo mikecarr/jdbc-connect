@@ -1,0 +1,7 @@
+name: direct-connect
+instances: 1
+framework:
+  type: standalone
+  runtime: java
+command: sh connect.sh
+mem: 512
