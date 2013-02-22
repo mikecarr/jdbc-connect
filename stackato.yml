@@ -3,5 +3,5 @@ instances: 1
 framework:
   type: standalone
   runtime: java
-command: sh connect.sh
+command: while true; do echo "hello"; sleep 2; done
 mem: 512
