@@ -1,1 +1,6 @@
-simple jdbc connect app
+= JDBC Connect (jdbc-connect)
+simple command line jdbc connect app for Oracle
+
+=== Setting Database connection
+edit db-connection.properties
+add database connection properties

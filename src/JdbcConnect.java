@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 /**
  * User: mcarr
@@ -13,15 +14,17 @@ import java.util.Properties;
  */
 public class JdbcConnect{
 
+    private static Logger logger = Logger.getLogger(JdbcConnect.class.getName()) ;
+
     public static void main(String [] args)  {
+
+        logger.info("*************************************");
+        logger.info(" jdbc-connect is starting!");
         try {
-
-
-
 
             Properties prop = new Properties();
             //load a properties file
-            prop.load(new FileInputStream("config.properties"));
+            prop.load(new FileInputStream("conf/db-connection.properties"));
             String url = prop.getProperty("url");
             String username = prop.getProperty("username");
             String password = prop.getProperty("password");
