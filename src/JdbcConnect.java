@@ -38,8 +38,14 @@ public class JdbcConnect{
             Statement stmt = conn.createStatement();
             logger.info(" jdbc-connect is creating query: '" + query + "'!");
             ResultSet rs = stmt.executeQuery(query);
+            ResultSetMetaData rsMetaData = rs.getMetaData();
+
             while (rs.next()) {
-                System.out.println(rs.getString(1));
+
+                for(int a=1; a <= rsMetaData.getColumnCount(); a++){
+                    System.out.format("%2d %-30s %s\n",a,rsMetaData.getColumnName(a),rs.getString(a));
+                }
+
             }
 
             System.out.println("Done!");
